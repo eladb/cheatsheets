@@ -120,14 +120,18 @@ componentWillUnmount()
 
 ### Actions
 
-    <form onSubmit={this.handleSubmit}>
-      Name: <input ref="name">
-    </form>
-
     React.createClass({
       handleSubmit: function (event) {
         name = this.refs['name'].getDOMNode().value;
         // see two-way binding below
+      },
+      
+      render: function() {
+        return (
+          <form onSubmit={this.handleSubmit}>
+            Name: <input ref="name">
+          </form>
+        );
       }
     })
 
